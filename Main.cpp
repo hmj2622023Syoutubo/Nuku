@@ -7,7 +7,7 @@ const int FPS = 60;
 enum SCENE {START,NUKU,TRAINING,SEARCH};
 enum CHARACTER { GFATHER, GMOTHER, KIDS, DOG, CAT, MOUSE };
 
-int Scene = SEARCH;
+int Scene = START;
 const int TurnipNumber = 20; // 画面上に表示するかぶの数
 const int Character = 6; // キャラクターの数
 int turnipX[TurnipNumber]; // かぶの座標
@@ -32,7 +32,7 @@ int imageGachaclose;
 int BGM, moneySE,NukuSE,GachaSE;
 int clickcount[TurnipNumber];
 int Charactercount[Character];
-int haveturnip = 100; // かぶの所持数
+int haveturnip = 0; // かぶの所持数
 int NukuSpeedLevel = 1;
 int NukuSpeed = 1;
 int NukuUpLevel = 1;
@@ -309,7 +309,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 						NukuSpeedLevel++;
 						NukuSpeed++;
 						haveturnip-=TurnipPointNukuSpeedPlayer;
-						TurnipPointNukuSpeedPlayer+= NukuSpeedLevel * 2;
+						TurnipPointNukuSpeedPlayer+= NukuSpeedLevel * 3;
 						PlaySoundMem(moneySE, DX_PLAYTYPE_BACK);
 					}
 				}
@@ -331,7 +331,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 						CharacterNukuSpeedLevel[page]++;
 						CharacterNukuSpeed[page]++;
 						haveturnip-=TurnipPointNukuSpeed[page];
-						TurnipPointNukuSpeed[page] += CharacterNukuSpeedLevel[page] * 2;
+						TurnipPointNukuSpeed[page] += CharacterNukuSpeedLevel[page] * 3;
 						PlaySoundMem(moneySE, DX_PLAYTYPE_BACK);
 					}
 				}
@@ -342,7 +342,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 						CharacterSpeedLevel[page]++;
 						CharacterSpeed[page]++;
 						haveturnip-= TurnipPointSpeed[page];
-						TurnipPointSpeed[page] += CharacterSpeedLevel[page]*2;
+						TurnipPointSpeed[page] += CharacterSpeedLevel[page]*3;
 						PlaySoundMem(moneySE, DX_PLAYTYPE_BACK);
 					}
 				}
