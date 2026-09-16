@@ -441,7 +441,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 				if (gachaY == 550)
 				{
 					timer++;
-					if (timer < 100)
+					if (timer < 50)
 					{
 						if(timer % 10 < 5)
 						{
@@ -452,16 +452,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 							gachaX -= 1;
 						}
 					}
-					if (timer == 100)
+					if (timer == 50)
 					{
 						PlaySoundMem(GachaSE, DX_PLAYTYPE_BACK);
 					}
-					if (timer >= 100)
+					if (timer >= 50)
 					{
 						GachaState = imageGachaopen;
 						DrawExtendGraph(475, 300, 775, 500, imageCharacter[Select], true);
 					}
-					if(timer >= 150)
+					if(timer >= 100)
 					{
 						gachaopen = false;
 						GachaState = imageGachaclose;
