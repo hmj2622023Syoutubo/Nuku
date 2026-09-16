@@ -292,13 +292,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 			DrawExtendGraph(400, 450, 600, 680, imageCharacter[page], true);
 			if (page != 0)
 			{
-				DrawText(50, HEIGHT/2, 0x000000, "Å©", 0, 30);
-				DrawBox(50, HEIGHT / 2, 80, HEIGHT / 2 + 30, 0x000000, false);
+				DrawBox(50, HEIGHT / 2, 80, HEIGHT / 2 + 30, 0x000000, true);
+				DrawText(50, HEIGHT/2, 0xffffff, "Å©", 0, 30);
 			}
 			if(page != Character - 1)
 			{
-				DrawText(1150, HEIGHT / 2, 0x000000, "Å®", 0, 30);
-				DrawBox(1150, HEIGHT / 2, 1180, HEIGHT / 2 + 30, 0x000000, false);
+				DrawBox(1150, HEIGHT / 2, 1180, HEIGHT / 2 + 30, 0x000000, true);
+				DrawText(1150, HEIGHT / 2, 0xfffffff, "Å®", 0, 30);
 			}
 			if (clickstate != 0 && precClickstate == 0)
 			{
